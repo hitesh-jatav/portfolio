@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Link } from "lucide-react";
+
 const professionalProjects = [
   {
     title: "Funfull",
@@ -56,6 +57,36 @@ const professionalProjects = [
       "Bootstrap CSS",
       "Nodemailer",
     ],
+  },
+];
+
+const personalProjects = [
+  {
+    title: "React Mini Projects",
+    url: "https://reacts-mini-projects.netlify.app/",
+    description:
+      "A collection of small React apps built to showcase various functionalities. The project includes a Dictionary, Tic-Tac-Toe, Calculator, Password Generator, Weather, Random Quote Generator, Quiz, and Memory Game.",
+    highlights: [
+      "Includes multiple mini-apps such as Dictionary, Tic-Tac-Toe, and Calculator.",
+      "Weather app fetches live data from a weather API for real-time information.",
+      "Random Quote Generator displays daily inspirational quotes.",
+      "Quiz app allows users to test their knowledge with a customizable quiz format.",
+      "Memory Game to improve cognitive skills with a fun interface.",
+    ],
+    tech: ["React.js", "Bootstrap", "JavaScript"],
+  },
+  {
+    title: "Crypto Chaser",
+    url: "https://crypto-chaserr.netlify.app/", // replace with your app's URL
+    description:
+      "A cryptocurrency tracker built with React, fetching live data from the CoinGecko API. The app displays real-time details for various cryptocurrencies, such as prices, market cap, and volume.",
+    highlights: [
+      "Uses the CoinGecko API to fetch real-time cryptocurrency data.",
+      "Displays key metrics for coins like price, market cap, and trading volume.",
+      "Responsive design built with React and Bootstrap for a seamless experience.",
+      "Allows users to search and track specific cryptocurrencies.",
+    ],
+    tech: ["React.js", "Bootstrap", "CoinGecko API", "JavaScript"],
   },
 ];
 
@@ -128,8 +159,39 @@ const Projects = () => {
 
       {/* Placeholder for Personal Projects */}
       {tab === "personal" && (
-        <div className="text-gray-500 text-sm">
-          Personal projects coming soon...
+        <div className="grid md:grid-cols-2 gap-6">
+          {personalProjects.map((project, idx) => (
+            <div
+              key={idx}
+              className="border border-gray-300 rounded-xl p-5 bg-white shadow-md transition hover:shadow-lg"
+            >
+              <h3 className="text-xl font-bold text-gray-800 mb-1 flex place-items-center">
+                {project.title}
+                {project?.url && (
+                  <a href={project.url} target="_">
+                    <Link className="mx-2" size={18} />
+                  </a>
+                )}
+              </h3>
+
+              <p className="text-gray-600 mb-3">{project.description}</p>
+              <ul className="list-disc pl-5 text-sm text-gray-700 space-y-1 mb-3">
+                {project.highlights.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map((tech, j) => (
+                  <span
+                    key={j}
+                    className="bg-yellow-100 text-yellow-700 text-xs font-medium px-2 py-1 rounded"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       )}
     </div>

@@ -4,7 +4,7 @@ import React from "react";
 import { Mail, Github, Linkedin } from "lucide-react";
 
 const Contact = () => {
-  const mail = "hkjatav@example.com";
+  const mail = "hkjatav@gmail.com";
   const linkedIn = "https://www.linkedin.com/in/hitesh-jatav-816972134/";
   const github = "https://github.com/hitesh-jatav";
 
@@ -13,8 +13,8 @@ const Contact = () => {
       <div className="w-full max-w-3xl text-center">
         <h2 className="text-4xl font-bold text-gray-800 mb-4">Get in Touch</h2>
         <p className="text-gray-600 mb-12 text-lg">
-          Whether you want to collaborate, hire, or just say hello — I’m always
-          open to new opportunities and conversations.
+          Whether you want to collaborate, hire, or just say hello &mdash;
+          I&rsquo;m always open to new opportunities and conversations.
         </p>
 
         {/* Contact Cards */}
@@ -64,7 +64,8 @@ const Contact = () => {
 
         {/* Footer Note */}
         <p className="text-sm text-gray-500 mt-16">
-          Built with ❤️ by Hitesh Jatav — Let's build something great together!
+          Built with ❤️ by Hitesh Jatav &mdash; Let&rsquo;s build something
+          great together!
         </p>
       </div>
     </div>

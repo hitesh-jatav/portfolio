@@ -21,6 +21,10 @@ const SideBar = ({
   const [collapsed, setCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
+  const mail = "hkjatav@gmail.com";
+  const linkedIn = "https://www.linkedin.com/in/hitesh-jatav-816972134/";
+  const github = "https://github.com/hitesh-jatav";
+
   // Detect screen width
   useEffect(() => {
     const handleResize = () => {
@@ -73,7 +77,7 @@ const SideBar = ({
 
           <div className="flex justify-center items-center space-x-4 p-4">
             <a
-              href="https://github.com/hitesh-jatav"
+              href={github}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-yellow-400"
@@ -81,17 +85,14 @@ const SideBar = ({
               <Github size={20} />
             </a>
             <a
-              href="https://www.linkedin.com/in/hitesh-jatav-816972134/"
+              href={linkedIn}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-yellow-400"
             >
               <Linkedin size={20} />
             </a>
-            <a
-              href="mailto:hkjatav@example.com"
-              className="hover:text-yellow-400"
-            >
+            <a href={`mailto:${mail}`} className="hover:text-yellow-400">
               <Mail size={20} />
             </a>
           </div>
